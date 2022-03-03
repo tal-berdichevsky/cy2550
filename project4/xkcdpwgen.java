@@ -8,10 +8,6 @@ import java.io.FileNotFoundException;
 
 //to represent a xkcd password generator
 public class xkcdpwgen {	 
-	 //static String wordsDirectory = System.getProperty("user.dir") + 
-	// "/words.txt";
-	 
-
         FileInputStream file = new FileInputStream("words.txt");
      
         Scanner scnr = new Scanner(file);
@@ -32,11 +28,6 @@ public class xkcdpwgen {
 
      //handles the user command line and calls the necessary methods to generate a password or a help message
 	 public static void main(String[] args) throws FileNotFoundException{
-	 
-	 //System.out.println(wordsDirectory);
-	 
-	
-	// FileInputStream file = new FileInputStream(wordsDirectory);
 		 int newNumWords = 4;
 		 int newCapsWordCount = 0;
 		 int newRandNumCount = 0;
