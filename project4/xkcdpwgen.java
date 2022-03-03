@@ -8,8 +8,13 @@ import java.io.FileNotFoundException;
 
 //to represent a xkcd password generator
 public class xkcdpwgen {	 
-	 String wordsDirectory = System.getProperty("user.dir") + "\\words.txt";
-	 FileInputStream file = new FileInputStream(this.wordsDirectory);
+	 //static String wordsDirectory = System.getProperty("user.dir") + 
+	// "/words.txt";
+	 
+
+        FileInputStream file = new FileInputStream("words.txt");
+     
+        Scanner scnr = new Scanner(file);
      Scanner scanner;
      int numWords;
      int capsWordCount;
@@ -26,7 +31,12 @@ public class xkcdpwgen {
 	 }
 
      //handles the user command line and calls the necessary methods to generate a password or a help message
-	 public static void main(String[] args) throws FileNotFoundException {
+	 public static void main(String[] args) throws FileNotFoundException{
+	 
+	 //System.out.println(wordsDirectory);
+	 
+	
+	// FileInputStream file = new FileInputStream(wordsDirectory);
 		 int newNumWords = 4;
 		 int newCapsWordCount = 0;
 		 int newRandNumCount = 0;
@@ -74,11 +84,13 @@ public class xkcdpwgen {
 	 
 	 //chooses a random word from the list
 	 public static String chooseWord() throws FileNotFoundException {
-		 FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "\\words.txt");
+		 
 	     String chosenWord = null;
 	     Random random = new Random();
+	     FileInputStream file = new FileInputStream("words.txt");
+            Scanner scnr = new Scanner(file);
 	     int i = 0;
-	     for(Scanner scanner = new Scanner(file); scanner.hasNext();) {
+	     for(Scanner scanner = scnr; scanner.hasNext();) {
 	        ++i;
 	        String currentLine = scanner.nextLine();
 	        if(random.nextInt(i) == 0)
