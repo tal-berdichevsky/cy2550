@@ -15,13 +15,5 @@ default: classes
 classes: $(CLASSES:.java=.class)
 
 clean:
-	rm -f *.jar
-	rm -f *.class
+	$(RM) *.class
 
-jar:	
-	jar cvf xkcdpwgen.jar xkcdpwgen.class
-	
-run:
-	java -cp xkcdpwgen.jar xkcdpwgen
-	
-all: clean default jar run
