@@ -1,0 +1,19 @@
+# Last Modified: Tue Mar 29 15:15:48 2022
+#include <tunables/global>
+
+/home/talberd/p2.4 {
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+  #include <abstractions/user-tmp>
+
+  /etc/hostid r,
+  /etc/timezone r,
+  /home/talberd/p2.4 mr,
+  /proc/uptime r,
+  /tmp/project2* rw,
+  /var/log/syslog r,
+  owner /home/*/.project2/config w,
+  owner /home/*/template r,
+
+}
+
